@@ -1,4 +1,4 @@
-name             'ubuntu-service-cookbook'
+name             'ubuntu-service'
 maintainer       'Mike Berman'
 description      'Installs/Configures ubuntu-service-cookbook'
 long_description 'Installs/Configures ubuntu-service-cookbook'

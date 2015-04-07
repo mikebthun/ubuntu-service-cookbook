@@ -4,7 +4,7 @@
 ## Usage
 
 ```
-include_recipe "ubuntu-service-cookbook"
+include_recipe "ubuntu-service"
 
 ubuntu_service 'your_service_name' do
   executable "/full/path/to/your/executable"
