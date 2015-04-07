@@ -1,0 +1,5 @@
+name             'ubuntu-service-cookbook'
+maintainer       'Mike Berman'
+description      'Installs/Configures ubuntu-service-cookbook'
+long_description 'Installs/Configures ubuntu-service-cookbook'
+version          '0.1.0'
