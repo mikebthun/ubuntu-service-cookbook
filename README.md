@@ -3,6 +3,7 @@
 
 ## Usage
 
+```
 include_recipe "ubuntu-service-cookbook"
 
 ubuntu_service 'your_service_name' do
@@ -10,7 +11,7 @@ ubuntu_service 'your_service_name' do
   cwd "/working/directory"
   description "Your service description"
 end
-
+```
 
 ## Supported Platforms
 
