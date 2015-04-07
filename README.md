@@ -1,5 +1,8 @@
 # ubuntu-service-cookbook-cookbook
 
+Chef upstart service recipe for Ubuntu. 
+
+Need an executable run as a service? This recipe is for you.
 
 ## Usage
 
