@@ -5,6 +5,7 @@ define :ubuntu_service, :executable => nil, :cwd => nil, :description => nil do
   template "/etc/init.d/#{params[:servicename]}" do
 
    source 'service.erb'
+   mode 0700
 
    variables(
     :servicename => params[:servicename],
@@ -20,11 +21,12 @@ define :ubuntu_service, :executable => nil, :cwd => nil, :description => nil do
   execute "Install %s service" % params[:servicename] do
     command "update-rc.d %s defaults 98 02 " % params[:servicename]
     action :run
+    notifies :start, "service[%s]" % params[:servicename], :immediately 
   end
-
-  # start the service
-  service params[:servicename] do
-    action :start
+ 
+  # start the service on notification
+  service "%s" % params[:servicename] do
+    supports :start => true, :stop => true, :restart => true
   end
 
 end
