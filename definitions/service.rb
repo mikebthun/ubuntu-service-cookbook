@@ -16,7 +16,16 @@ define :ubuntu_service, :executable => nil, :cwd => nil, :description => nil do
  
   end
 
+  # add the service
+  execute "Install %s service" % params[:servicename] do
+    command "update-rc.d %s defaults 98 02 " % params[:servicename]
+    action :run
+  end
 
+  # start the service
+  service params[:servicename] do
+    action :start
+  end
 
 end
 
