@@ -6,7 +6,7 @@ define :ubuntu_service, :executable => nil, :cwd => nil, :description => nil do
 
    source 'service.erb'
    mode 0700
-
+   cookbook "ubuntu-service"
    variables(
     :servicename => params[:servicename],
     :executable => params[:executable],
