@@ -1,4 +1,9 @@
-define :ubuntu_service, :executable => nil, :cwd => nil, :description => nil do
+define :ubuntu_service, 
+  :executable => nil, 
+  :cwd => nil, 
+  :description => nil, 
+  :environment_variables => {},
+  :arguments => nil do
 
   params[:servicename] ||= params[:name]
 
@@ -11,7 +16,9 @@ define :ubuntu_service, :executable => nil, :cwd => nil, :description => nil do
     :servicename => params[:servicename],
     :executable => params[:executable],
     :cwd => params[:cwd ],
-    :description => params[:description]
+    :description => params[:description],
+    :arguments => params[:arguments],
+    :environment_variables => params[:environment_variables]
    )
 
  

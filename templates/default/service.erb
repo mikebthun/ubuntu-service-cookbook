@@ -18,12 +18,17 @@
 # Do NOT "set -e"
 
 
+# SET ENVIRONMENT VARIABLES
+<% @environment_variables.each_pair do |key, value| %>
+<%= "env #{key}=#{value}" %>
+<% end %>
+
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin
 DESC="<%= @description %>"
 NAME=<%= @servicename %>
 DAEMON=<%= @executable %>
-DAEMON_ARGS=""
+DAEMON_ARGS="<%= @arguments %>"
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
 
