@@ -9,11 +9,17 @@ Need an executable run as a service? This recipe is for you.
 ```
 include_recipe "ubuntu-service"
 
-ubuntu_service 'your_service_name' do
-  executable "/full/path/to/your/executable"
-  cwd "/working/directory"
+ubuntu_service 'yourservice' do
+  executable "/bin/ls"
+  cwd "/"
   description "Your service description"
+  arguments "-lah"
+  environment_variables ({
+    'blahKey' => 'blahValue'
+  })
 end
+
+
 ```
 
 ## Supported Platforms
